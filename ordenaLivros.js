@@ -1,41 +1,33 @@
 const livros = require("./lista-livros");
 
-function menorValor(arrProdutos, posicaoInicial){
-    let maisBarato = posicaoInicial;
-    for(let atual = posicaoInicial; atual < arrProdutos.length; atual++){
-        if(arrProdutos[atual].preco < arrProdutos[maisBarato].preco) {
-            maisBarato = atual;
+function maisBarato(lista){
+    for(let i = 0; i < lista.length; i++){
+        let atual = i;
+        while(atual > 0 && lista[atual].preco < lista[atual - 1].preco){
+            let itemAtual = lista[atual];
+            let itemAnterior = lista[atual - 1];
+            lista[atual] = itemAnterior;
+            lista[atual - 1] = itemAtual;
+            atual--;
         }
     }
-    return maisBarato;
+    console.log(lista);
 }
-for(let atual = 0; atual < livros.length; atual++){
-    let menor = menorValor(livros, atual);
+maisBarato(livros);
 
-    let livroAtual = livros[atual];
-    let livroMenorPreco = livros[menor];
-
-    livros[atual] = livroMenorPreco;
-    livros[menor] = livroAtual;
-}
-console.log(livros);
-
-function maiorValor(arrProdutos, posicaoInicial){
-    let maisCaro = posicaoInicial;
-    for(let atual = posicaoInicial; atual < arrProdutos.length; atual++){
-        if(arrProdutos[atual].preco > arrProdutos[maisCaro].preco){
-            maisCaro = atual;
+function maisCaro(lista){
+    for(let i = 0; i < lista.length; i++){
+        let atual = i;
+        while(atual > 0 && lista[atual].preco > lista[atual - 1].preco){
+            let itemAtual = lista[atual];
+            let itemAnterior = lista[atual -1];
+            lista[atual] = itemAnterior;
+            lista[atual - 1] = itemAtual;
+            atual--;
         }
     }
-    return maisCaro;
+    console.log(lista);
 }
-for(let atual = 0; atual < livros.length; atual++){
-    let maior = maiorValor(livros, atual);
+maisCaro(livros);
 
-    let livroAtual = livros[atual];
-    let livroMaiorPreco = livros[maior];
-
-    livros[atual] = livroMaiorPreco;
-    livros[maior] = livroAtual;
-}
-console.log(livros);
+function maisVendidos
