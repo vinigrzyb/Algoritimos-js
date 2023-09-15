@@ -30,4 +30,17 @@ function maisCaro(lista){
 }
 maisCaro(livros);
 
-function maisVendidos
+function maisVendidos(lista){
+    for(let i = 0; i < lista.length; i++){
+        let atual = i;
+        while(atual > 0 && lista[atual].vendas > lista[atual - 1].vendas){
+            let itemAtual = lista[atual];
+            let itemAnterior = lista[atual - 1];
+            lista[atual] = itemAnterior;
+            lista[atual - 1] = itemAtual;
+            atual--;
+        }
+    }
+    console.log(lista)
+}
+maisVendidos(livros);
