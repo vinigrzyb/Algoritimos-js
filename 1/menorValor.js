@@ -11,3 +11,6 @@ function menorValor(arrProdutos, posicaoInicial) {
     return maisBarato;
 }
 module.exports = menorValor;
+
+//faz entre n e 2n operações
+//Crescimento linear 

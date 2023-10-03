@@ -1,4 +1,4 @@
-const livros = require("./lista-livros");
+const livros = require('./1/lista-livros');
 
 function maisBarato(lista){
     for(let i = 0; i < lista.length; i++){
@@ -20,7 +20,7 @@ function maisCaro(lista){
         let atual = i;
         while(atual > 0 && lista[atual].preco > lista[atual - 1].preco){
             let itemAtual = lista[atual];
-            let itemAnterior = lista[atual -1];
+            let itemAnterior = lista[atual - 1];
             lista[atual] = itemAnterior;
             lista[atual - 1] = itemAtual;
             atual--;
@@ -30,7 +30,7 @@ function maisCaro(lista){
 }
 maisCaro(livros);
 
-function maisVendidos(lista){
+function maisVendido(lista){
     for(let i = 0; i < lista.length; i++){
         let atual = i;
         while(atual > 0 && lista[atual].vendas > lista[atual - 1].vendas){
@@ -41,6 +41,6 @@ function maisVendidos(lista){
             atual--;
         }
     }
-    console.log(lista)
+    console.log(lista);
 }
-maisVendidos(livros);
+maisVendido(livros);

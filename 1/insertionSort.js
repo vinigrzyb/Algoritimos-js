@@ -15,3 +15,6 @@ function insertionSort(lista){
     console.log(lista);
 }
 insertionSort(livros);
+
+// Não recomendado
+// algorítimo quadrático
