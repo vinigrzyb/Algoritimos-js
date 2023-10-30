@@ -18,13 +18,14 @@ function ordena(pt1, pt2){
     while(posicaoAtualPt1 < pt1.length && posicaoAtualPt2 < pt2.length){
         let produtoAtualPt1 = pt1[posicaoAtualPt1];
         let produtoAtualPt2 = pt2[posicaoAtualPt2];
-    }
-    if(produtoAtualPt1.preco < produtoAtualPt2.preco){
-        resultado.push(produtoAtualPt1);
-        posicaoAtualPt1++
-    }else{
-        resultado.push(produtoAtualPt2);
-        posicaoAtualPt2++;
+
+        if(produtoAtualPt1.preco < produtoAtualPt2.preco){
+            resultado.push(produtoAtualPt1);
+            posicaoAtualPt1++
+        }else{
+            resultado.push(produtoAtualPt2);
+            posicaoAtualPt2++;
+        }
     }
     return resultado.concat(posicaoAtualPt1 < pt1.length
        ? pt1.slice(posicaoAtualPt1)
